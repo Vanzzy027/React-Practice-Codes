@@ -1,0 +1,42 @@
+### GET All Tasks
+GET http://localhost:8081/api/tasks
+Accept: application/json
+
+
+### POST Create New Task
+POST http://localhost:8081/api/tasks
+Content-Type: application/json
+
+{
+    "title": "Setup Hono & TypeScript Backend",
+    "description": "Initialize the project, install dependencies, and configure tsconfig.",
+    "due_date": "2025-11-15"
+}
+
+
+### GET Task by ID (Replace {task_id} with an actual ID)
+GET http://localhost:8081/api/tasks/{task_id}
+Accept: application/json
+
+
+
+
+### PUT Update Task - Move to In Progress (Replace {task_id} with an actual ID)
+PUT http://localhost:8081/api/tasks/{task_id}
+Content-Type: application/json
+
+{
+    "stage": "in_progress"
+}
+
+### PUT Update Task - Update Title 
+Content-Type: application/json
+
+{
+    "title": "Finished Backend Setup and Routing"
+}
+
+
+
+### DELETE Task by ID (Replace {task_id} with an actual ID)
+DELETE http://localhost:8081/api/tasks/{task_id}

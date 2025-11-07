@@ -21,16 +21,16 @@ GET http://localhost:8080/
 
 
 
-# =====GET ALL MOVIES =======
+# =GET ALL MOVIES ===
 ###
 GET http://localhost:8080/api/movies
 
-# =====GET MOVIE BY ID =======
+# =GET MOVIE BY ID ===
 ###
 GET http://localhost:8080/api/movies/1
 
 
-// =====CREATE NEW MOVIE ======
+// =CREATE NEW MOVIE ==
 ###
 POST http://localhost:8080/api/movies
 Content-Type: application/json
@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/api/movies/1
+PUT http://localhost:8080/api/movies/6
 Content-Type: application/json
 
 {
@@ -53,6 +53,6 @@ Content-Type: application/json
 
 
 
-//=====DELETE A MOVIE  BY ID======
+//=DELETE A MOVIE  BY ID
 ###
 DELETE http://localhost:8080/api/movies/2

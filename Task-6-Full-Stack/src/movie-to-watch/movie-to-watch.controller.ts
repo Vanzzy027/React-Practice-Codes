@@ -1,6 +1,6 @@
 import type { Context } from "hono"
 import * as movieToWatchService from "./movie-to-watch.service.js"
-// import { sendNotificationEmail } from "../mailer/mailer.ts"
+
 
 
 //get all movie
@@ -55,33 +55,61 @@ export const createMovie = async (c: Context) => {
   }
 }
 
+
+
+// ... (Other functions remain the same)
+
 //PUT /movies/:id - Update a specific Movie
 export const updateMovie = async (c: Context) => {
   const movie_id = parseInt(c.req.param("movie_id"))
-  const { movie_name, release_date, is_watched } = await c.req.json()
-  try {
+  // Only extract the fields that MIGHT be present in the request body
+  const { movie_name, release_date, is_watched } = await c.req.json() 
 
-    //check movie exist
+  try {
     const ifMovieExist = await movieToWatchService.getMovieByIdService(movie_id)
-    if (ifMovieExist === null ) {
+    
+    if (ifMovieExist === null) {
       return c.json({ error: "Movie not found" }, 404)
     }
 
-    // update movie
-    const updatedMovie = await movieToWatchService.updateMovieService(movie_id, movie_name, release_date, is_watched)
-    if(updatedMovie === "Failed to update movie try again" ){
-      return c.json({error:"Failed to updated"},404)
+    const finalMovieName: string = movie_name !== undefined ? movie_name : ifMovieExist.movie_name;
+
+
+    const existingDateString = (ifMovieExist.release_date || '').toString().split('T')[0];
+    const finalReleaseDate: string = release_date !== undefined ? release_date : existingDateString;
+    
+    // 3. Watched Status: Use new status if provided, otherwise use existing.
+    const finalIsWatched: boolean = is_watched !== undefined ? is_watched : ifMovieExist.is_watched;
+    
+    // The service now receives all four parameters, ensuring no 'undefined' values are passed.
+    const updatedMovie = await movieToWatchService.updateMovieService(
+        movie_id, 
+        finalMovieName, 
+        finalReleaseDate, 
+        finalIsWatched
+    )
+    
+    if (updatedMovie === "Failed to update movie try again") {
+      // Use 500 for a generic update failure, or 400 if validation/data issue
+      return c.json({ error: "Failed to update" }, 500) 
     }
 
-    return c.json({message:updatedMovie},200)
+    return c.json({ message: updatedMovie }, 200)
 
   } catch (error) {
     console.error('Error updating movie:', error);
-    return c.json({ error: 'Failed to update movie' }, 500);
+    // The error is likely thrown here. Return a 500 with a generic message.
+    return c.json({ error: 'Failed to update movie due to server error' }, 500); 
   }
 }
 
-//DELETE /movies/:id - Delete a specific Movie
+
+
+
+
+
+
+//Delete a specific Movie
 export const deletedMovie = async(c: Context) => {
   const movie_id = parseInt(c.req.param("movie_id"))
 
