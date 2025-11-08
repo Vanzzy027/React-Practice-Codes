@@ -1,0 +1,1 @@
+# Open two different terminals one for frontend and the other for the backend so that you can view the entire thing
