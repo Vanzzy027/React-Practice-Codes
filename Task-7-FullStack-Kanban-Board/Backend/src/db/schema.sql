@@ -1,15 +1,15 @@
 -- DBName= ProjectTasksDB
 -- Drop the old table if you want to start fresh
-IF OBJECT_ID('ProjectTasks', 'U') IS NOT NULL
-    DROP TABLE ProjectTasks;
-GO
+-- IF OBJECT_ID('ProjectTasks', 'U') IS NOT NULL
+--    DROP TABLE ProjectTasks;
+--GO
 
 -- Create the new ProjectTasks table
 CREATE TABLE ProjectTasks (
     task_id INT IDENTITY(1,1) PRIMARY KEY,
     title NVARCHAR(255) NOT NULL,
     description NVARCHAR(MAX),
-    -- The status of the task, matching the frontend TaskStage type
+    -- The status of the task, matching the frontend TaskStage type (enum implementation)
     stage NVARCHAR(50) NOT NULL CHECK (stage IN ('todo', 'in_progress', 'awaiting_review', 'done')),
     due_date DATE NOT NULL,
     created_at DATETIMEOFFSET DEFAULT SYSDATETIMEOFFSET()
