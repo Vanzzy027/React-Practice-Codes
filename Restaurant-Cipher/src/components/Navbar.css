@@ -1,0 +1,159 @@
+
+:root {
+    --color-primary: #5D4037; 
+    --color-background-dark: #333333; 
+    --color-text-light: #FFFFFF; 
+}
+.navbar {
+
+    background-color: var(--color-background-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--color-text-light);
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--color-primary); 
+    background: transparent; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* White text on dark background */
+    color: var(--color-text-light);
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar-link {
+    text-decoration: none;
+    /* Light gray for good visibility on charcoal */
+    color: #CCCCCC;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-link:hover {
+    /* Accent with Dark Coffee Brown on hover */
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+.navbar-link.active {
+    /* Highlight active link with Coffee Brown */
+    color: var(--color-primary);
+}
+
+.navbar-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    /* Changed to Dark Coffee Brown accent */
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    /* Primary button color is Dark Coffee Brown */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-primary);
+}
+
+.login-btn:hover {
+    /* Darker brown on hover */
+    background-color: #4E342E; 
+    border-color: #4E342E;
+    transform: translateY(-1px);
+    /* Shadow using primary color */
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-menu {
+        gap: 1rem;
+    }
+
+    .navbar-link {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .brand-text {
+        font-size: 1.2rem;
+    }
+
+    .login-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+    }
+}

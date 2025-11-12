@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Palette Variables for Cypher Phoods */
+:root {
+  /* Cypher Phoods Palette */
+  --color-primary: #5D4037; /* Dark Coffee Brown (Accent/Focus) */
+  --color-background-light: #FAF0E6; /* Linen / Beige (Main Background) */
+  --color-background-dark: #333333; /* Rich Charcoal (Navbar/Footer) */
+  --color-headline: #2D1E16; /* Deep Chocolate Brown (Text/Headlines) */
+  --color-text-light: #FFFFFF;
+
+  /* Global Defaults Updated to Match Palette */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-headline); /* Default text color is Deep Chocolate Brown */
+  background-color: var(--color-background-light); /* Default background is Linen/Beige */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background-light); /* Ensure body background matches theme */
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  border-radius: 6px;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:focus,
+button:focus-visible {
+  /* Focus state matches the Dark Coffee Brown accent color */
+  outline: 2px solid var(--color-primary); 
+  outline-offset: 2px;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:focus {
+  /* Focus state matches the Dark Coffee Brown accent color */
+  outline: 2px solid var(--color-primary); 
+  outline-offset: 0;
+  border-color: var(--color-primary);
+}

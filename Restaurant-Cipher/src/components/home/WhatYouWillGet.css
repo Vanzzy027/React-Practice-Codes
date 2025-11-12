@@ -1,0 +1,86 @@
+.what-you-get {
+    /* Uses the light background established for content sections */
+    background-color: var(--color-background-light); 
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--color-headline);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.feature-card {
+    flex: 1;
+    max-width: 350px;
+    padding: 30px;
+    /* Optional: Give the card a very subtle, transparent background to stand out slightly */
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid #EBEBEB;
+}
+
+.feature-card:hover {
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.1); /* Subtle shadow using the primary color */
+}
+
+.feature-icon {
+    /* Make the icon large and prominently styled with the accent color */
+    font-size: 3rem;
+    color: var(--color-primary); 
+    margin-bottom: 15px;
+    /* Optional: Add a subtle circular background using a very light tint of the primary color */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(93, 64, 55, 0.05); 
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.feature-card h3 {
+    color: var(--color-headline);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.feature-card p {
+    color: #666666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-card {
+        max-width: 100%;
+    }
+}

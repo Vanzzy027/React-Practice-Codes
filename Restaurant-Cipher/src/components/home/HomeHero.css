@@ -1,0 +1,102 @@
+:root {
+    --color-primary: #5D4037; 
+    --color-background-light: #FAF0E6; 
+    --color-background-dark: #333333; 
+    --color-headline: #2D1E16; 
+    --color-text-light: #FFFFFF;
+}
+
+.hero {
+    /* Uses a light, earthy background */
+    background-color: var(--color-background-light); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 5%;
+    min-height: 80vh; /* Ensures the hero section takes up significant vertical space */
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-title {
+    /* Uses the deep chocolate brown for a rich heading */
+    color: var(--color-headline);
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    /* Changed from #5A5A5A to a slightly lighter shade of the headline color for better theme integration */
+    color: #4F382E; 
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Primary Call to Action Button */
+.hero-btn {
+    /* Uses the Dark Coffee Brown for a prominent button */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px 35px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px; /* Slightly rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-btn:hover {
+    /* Darken the brown slightly on hover */
+    background-color: #4E342E; 
+    border-color: #4E342E;
+    /* Lift the button slightly */
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Image Section */
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+    /* Add a subtle dark frame or shadow to the image */
+    border: 5px solid var(--color-headline); 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 40px 5%;
+    }
+
+    .hero-content, .hero-image {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,118 @@
+.top-meals {
+    background-color: var(--color-background-light);
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--color-headline);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: #4F382E; /* Darker text for subtitle */
+    font-size: 1.15rem;
+    margin-bottom: 50px;
+}
+
+.meals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.meal-card {
+    background-color: #FFFFFF; /* Pure white card background */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Lift card on hover */
+}
+
+/* Image Styling */
+.meal-image {
+    position: relative;
+    height: 250px;
+}
+
+.meal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Category Badge */
+.meal-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    /* Uses the primary brown color for the badge */
+    background-color: var(--color-primary); 
+    color: var(--color-text-light);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.meal-content {
+    padding: 20px;
+}
+
+.meal-name {
+    color: var(--color-headline);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.meal-description {
+    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    min-height: 40px; /* Ensures consistent card height */
+}
+
+.meal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.meal-price {
+    /* Uses the primary brown color for the price highlight */
+    color: var(--color-primary); 
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.order-btn {
+    /* Uses a slightly lighter brown for contrast with the price */
+    background-color: #795548; 
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+}
+
+.order-btn:hover {
+    background-color: var(--color-primary); /* Darken back to primary on hover */
+}

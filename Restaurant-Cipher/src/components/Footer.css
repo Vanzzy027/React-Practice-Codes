@@ -1,0 +1,142 @@
+
+
+.footer {
+    background-color: var(--color-background-dark);
+    color: #CCCCCC;
+    padding: 50px 5%;
+    font-size: 0.95rem;
+    border-top: 5px solid var(--color-primary); /* A signature line of coffee brown */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #444444;
+    gap: 40px;
+}
+
+/* Brand Section */
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-logo .logo-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-right: 8px;
+}
+
+.footer-brand .brand-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+}
+
+.footer-description {
+    line-height: 1.6;
+    color: #AAAAAA;
+}
+
+/* Links Section */
+.footer-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+.footer-section {
+    min-width: 150px;
+}
+
+.footer-title {
+    color: var(--color-primary); /* Coffee brown titles */
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #AAAAAA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+.footer-social a {
+    margin-left: 20px;
+    color: #AAAAAA;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-social a:hover {
+    color: var(--color-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand, .footer-links {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
